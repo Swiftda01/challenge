@@ -1,0 +1,258 @@
+header, body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  width: 100%;
+}
+
+.container {
+  width: 1300px;
+}
+
+.grey {
+  background-color: #F1F1F1;
+}
+
+.push_up {
+  display: block;
+  height: 30px;
+  margin-top: -30px;
+  visibility: hidden;
+}
+
+#logo {
+  text-align: center;
+}
+
+#content {
+  padding: 1em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #585858;
+  padding: 5px;
+}
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+#header {
+  background-image: url(/images/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 19%;
+  width: 100%;
+  height: 400px;
+}
+
+#title_nav {
+  width: 100%;
+  height: 45px;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+#title {
+  float: left;
+  width: 170px;
+}
+
+#title h1 {
+  margin: 12px 0 0 10px;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+#nav {
+  width: 720px;
+  float: right;
+  text-align: right;
+}
+
+#nav ul {
+  margin-top: 10px;
+}
+
+#nav li {
+  margin: 0 2px 0 2px;
+  list-style: none;
+  display: inline;
+  color: white;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: white;
+}
+
+#nav a:hover {
+  text-decoration: underline;
+}
+
+.pd {
+  margin-bottom: 15px;
+}
+
+.border_right {
+  border-right: 2px solid #F1F1F1;
+}
+
+.margin_right {
+  margin-right: 30px;
+}
+
+.large_margin_right {
+  margin-right: 50px;
+}
+
+.about {
+  padding: 20px 0 20px 0;
+}
+
+.about li {
+  font-size: 16px;
+  padding: 4px;
+}
+
+.key {
+  font-weight: bold;
+  color: #585858;
+}
+
+.about li img {
+  width: 25px;
+  height: 25px;
+  margin: 0 1px 0 1px;
+}
+
+.about p {
+  font-size: 16px;
+}
+
+.profile_pic {
+  width: 350px;
+  height: 250px;
+}
+
+.blue_heading {
+  color: #374c77;
+  font-size: 22px;
+}
+
+.app_questions {
+  padding: 25px 0 25px 0;
+}
+
+.app_questions h4 {
+  font-weight: bold;
+  color: #585858;
+  font-size: 16px;
+}
+
+.app_qs {
+  padding: 40px 0 20px 0;
+}
+
+.app_qs {
+  font-size: 16px;
+}
+
+.answer h4 {
+  padding: 0 20px 0 20px;
+}
+
+.answer p {
+  padding: 0 20px 0 20px;
+}
+
+.problems {
+  padding: 15px 0 15px 0;
+  text-align: center;
+}
+
+.problems h3, p, form, input {
+  padding: 4px;
+}
+
+.problems form {
+  padding-bottom: 25px;
+}
+
+.result {
+  padding-bottom: 25px;
+}
+
+.edit {
+  padding: 15px 0 15px 0;
+}
+
+.edit p, form {
+  padding: 5px;
+}
+
+.edit label, input {
+  margin: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  webkit-box-sizing: border-box;
+}
+
+.form-group {
+  padding: 5px;
+  margin: 5px;
+}
+
+.edit_app_qs textarea {
+  width: 300px;
+  height: 150px;
+}
+
+.update_profile_button {
+  margin: 20px 0 40px 0;
+  padding-left: 40px;
+}
+
+@media only screen and (max-width: 936px) {
+
+
+  #title_nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+  #nav {
+    width: 100%;
+    clear: both;
+    position: relative;
+    top: 14px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+  #nav li {
+    padding-left: 5px;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+.about {
+  border-right: none;
+}
+
+}

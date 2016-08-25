@@ -1,0 +1,173 @@
+<% if @profile %>
+  
+  <!-- PERSONAL DETAILS -->
+  <div class="container-fluid pd">
+    <div class="col-sm-3 about border_right margin_right">
+      <a name="personal_details" class="push_up"></a>
+      <ul>
+        <li><span class="key">Name:</span> <%= @profile["first_name"] %> <%= @profile["last_name"] %></li>
+        <li><span class="key">Date of Birth:</span> <%= @dob_form %></li>
+        <li><span class="key">Gender:</span> <%= @profile["gender"] %></li>
+        <li><span class="key">Telephone Number:</span> <%= @profile["phone_number"] %></li>
+        <li><span class="key">Employment Status:</span> <%= @profile["employment_status"] %></li>
+        <li><span class="key">Codecademy Account:</span> <%= @profile["codecademy"] %></li>
+        <li><span class="key">Web</span> <%= @info["web_track_completedness"] %>
+        <span class="key">| Ruby</span> <%= @info["ruby_track_completedness"] %> 
+        <span class="key">| JS</span> <%= @info["js_track_completedness"] %></li>
+        <li><a href="https://github.com/Swiftda01" target="_blank"><img src="/images/github_icon.png" alt="GitHub Profile"></a>
+        <a href="https://www.facebook.com/dave.swift.7" target="_blank"><img src="/images/facebook_icon.png" alt="Twitter Profile"></a>
+        <a href="https://twitter.com/SwiftyPence" target="_blank"><img src="/images/twitter_icon.png" alt="Facebook Profile"></a></li>
+      </ul>
+    </div>
+    <div class="col-sm-5 about large_margin_right">
+      <p><span class="key">About Me:</span><br><%= @info["about"] %></p>
+    </div>
+    <div class="col-sm-3 about">
+      <img src="/images/profile_pic.jpg" alt="Profile Picture" class="profile_pic img-thumbnail img-responsive">
+    </div>
+  </div>
+
+  <!-- WORD COUNT -->
+  <!--
+  <div id="stats" class="box">
+    <h3>Stats</h3>
+    <!-- TODO - Set the contents of this span with JavaScript -->
+    <!--
+    <span id="word-count">0</span> words found.
+  </div> -->
+ 
+  <!-- PROGRAMMING PROBLEMS -->
+  <div class="container-fluid grey">
+    <div class="col-md-4 problems">
+      <a name="prog_prob" class="push_up"></a>
+      <h3 class="blue_heading">Prime Time</h3>
+      <p>Enter a number below to find out whether or not it is a prime number:</p>
+      <form action="/check_prime">
+        <input type="text" name="number" value="<%= @number %>">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="col-md-4 problems">
+      <h3 class="blue_heading">A Prime Problem</h3>
+      <p>Enter a number below to find the sum off all the prime numbers within it:</p>
+      <form action="/primes">
+        <input type="text" name="limit" value="<%= @limit %>">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="col-md-4 problems">
+      <h3 class="blue_heading">Multiple Issues</h3>
+      <p>Enter a number below to find the sum of each of its multiples between 1-1000:</p>
+      <form action="/multiples">
+        <input type="text" name="multiple" value="<%= @multiples_sum %>">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <!-- APPLICATION QUESTIONS -->
+  <div class="container-fluid app_qs">
+    <div class="col-sm-6 answer">
+      <a name="app_qs" class="push_up"></a>
+      <h4><span class="key">Why do you want to apply for this program?</span></h4><p><%= @info["why_apply"] %></p><br>
+    </div>
+    <div class="col-sm-6 answer">
+    <h4><span class="key">Where do you see your career in 1 year's time?</span></h4><p><%= @info["where_in_1"] %></p><br>
+    </div>
+  </div>
+
+  <!-- EDIT PROFILE -->
+  <div class="container-fluid grey">
+    <div class="edit">
+      <a name="edit" class="push_up"></a>
+      <h3 class="blue_heading" >Edit Profile</h3>
+
+      <form action="/update" method="POST" >
+        <fieldset>
+
+          <!-- EDIT PESONAL DETAILS -->
+          <div class="col-sm-12">
+            <div class="form-group col-md-2">
+                <label for="trainee[phone_number]">First Name</label><br>
+                <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="trainee[phone_number]">Last Name</label><br>
+                <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="trainee[phone_number]">Telephone Number</label><br>
+                <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="trainee[employment_status]">Employment Status</label><br>
+                <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+            </div>
+          </div>
+
+          <!-- EDIT CODECADEMY DETAILS -->
+          <div class="col-sm-12">
+            <div class="form-group col-sm-2">
+              <label for="trainee[codecademy]">Codecademy Username</label><br>
+              <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="trainee[web_track_completedness]">Web Track Completion</label><br>
+              <input type="text" name="trainee[web_track_completedness]" value="<%= @info["web_track_completedness"] %>"/>
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="trainee[ruby_track_completedness]">Ruby Track Completion</label><br>
+              <input type="text" name="trainee[ruby_track_completedness]" value="<%= @info["ruby_track_completedness"] %>"/>
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="trainee[js_track_completedness]">JS Track Completion</label><br>
+              <input type="text" name="trainee[js_track_completedness]" value="<%= @info["js_track_completedness"] %>"/>
+            </div>
+          </div>
+
+          <!-- EDIT APPLICATION QUESTIONS -->
+          <div class="col-sm-12 edit_app_qs">
+            <div class="form-group col-md-3">
+              <label for="trainee[about]"><br>About Me</label><br>
+              <textarea type="text" name="trainee[about]"><%= @info["about"] %></textarea>
+            </div>
+            <div class="form-group col-md-3 space_right">
+              <label for="trainee[why_apply]">Why do you want to apply for this program?</label><br>
+              <textarea type="text" name="trainee[why_apply]"><%= @info["why_apply"] %></textarea>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="trainee[where_in_1]">Where do you see your career in 1 year's time?</label><br>
+              <textarea type="text" name="trainee[where_in_1]"><%= @info["where_in_1"] %></textarea>
+            </div>
+          </div>
+          </fieldset>
+
+          <!-- UPDATE PROFILE BUTTON -->
+          <div class="update_profile_button">
+            <input type="submit" value="Update Profile" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
+
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>

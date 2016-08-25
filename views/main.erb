@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= @profile["first_name"] %>'s Application to We Got Coders</title>
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <Header>
+  <div id="header">
+    <div id="title_nav">
+      <div id="title">
+        <h1><%= @profile["first_name"] %>'s Profile</h1>
+      </div>
+      <div id="nav">
+        <nav>
+          <ul>
+            <li><a href="/#personal_details">Personal Details</a></li>
+            <li>|</li>
+            <li><a href="/#prog_prob">Programming Problems</a></li>
+            <li>|</li>
+            <li><a href="/#app_qs">Application Questions</a></li>
+            <li>|</li>
+            <li><a href="/#edit">Edit Profile</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>  
+  </Header>
+
+  <body>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
