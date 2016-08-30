@@ -1,5 +1,6 @@
 <% if @profile %>
   
+
   <!-- PERSONAL DETAILS -->
   <div class="container-fluid pd">
     <div class="col-sm-3 about border_right margin_right">
@@ -27,14 +28,6 @@
     </div>
   </div>
 
-  <!-- WORD COUNT -->
-  <!--
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <!--
-    <span id="word-count">0</span> words found.
-  </div> -->
  
   <!-- PROGRAMMING PROBLEMS -->
   <div class="container-fluid grey">
@@ -65,6 +58,7 @@
     </div>
   </div>
 
+
   <!-- APPLICATION QUESTIONS -->
   <div class="container-fluid app_qs">
     <div class="col-sm-6 answer">
@@ -75,6 +69,7 @@
     <h4><span class="key">Where do you see your career in 1 year's time?</span></h4><p><%= @info["where_in_1"] %></p><br>
     </div>
   </div>
+
 
   <!-- EDIT PROFILE -->
   <div class="container-fluid grey">
@@ -128,16 +123,16 @@
           <!-- EDIT APPLICATION QUESTIONS -->
           <div class="col-sm-12 edit_app_qs">
             <div class="form-group col-md-3">
-              <label for="trainee[about]"><br>About Me</label><br>
-              <textarea type="text" name="trainee[about]"><%= @info["about"] %></textarea>
+              <label for="trainee[about]"><br>About Me <span class="min_words">(Min. 20 words)</span></label><br>
+              <textarea type="text" name="trainee[about]" id="count1"><%= @info["about"] %></textarea><br>Word Count: <span id="word-count1"></span>
             </div>
             <div class="form-group col-md-3 space_right">
-              <label for="trainee[why_apply]">Why do you want to apply for this program?</label><br>
-              <textarea type="text" name="trainee[why_apply]"><%= @info["why_apply"] %></textarea>
+              <label for="trainee[why_apply]">Why do you want to apply for this program? <span class="min_words">(Min. 20 words)</span></label><br>
+              <textarea type="text" name="trainee[why_apply]" id="count2"><%= @info["why_apply"] %></textarea><br>Word Count: <span id="word-count2"></span>
             </div>
             <div class="form-group col-md-3">
-              <label for="trainee[where_in_1]">Where do you see your career in 1 year's time?</label><br>
-              <textarea type="text" name="trainee[where_in_1]"><%= @info["where_in_1"] %></textarea>
+              <label for="trainee[where_in_1]">Where do you see your career in 1 year's time? <span class="min_words">(Min. 20 words)</span></label><br>
+              <textarea type="text" name="trainee[where_in_1]" id="count3"><%= @info["where_in_1"] %></textarea><br>Word Count: <span id="word-count3"></span>
             </div>
           </div>
           </fieldset>
@@ -156,18 +151,34 @@
 
     <a href="/authorise">Authorise</a>
   </div>
+
+  
 <% end %>
 
 
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
+<script>
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  
+  var total_words;
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  $(document).ready(function() {
+    var wordCount = function(i) {
 
-  document.getElementById('word-count').innerHTML = total_words;
+      total_words = $("#count"+i).val().split(" ").length;
+      $("#word-count"+i).html(total_words - 1);
+
+        $("#count"+i).keyup(function() {
+          total_words = $(this).val().split(" ").length
+          $("#word-count"+i).html(total_words - 1);
+
+        });
+
+    };
+
+    wordCount("1");
+    wordCount("2");
+    wordCount("3");
+
+  });
+
 </script>

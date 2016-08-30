@@ -80,8 +80,10 @@ Since graduating from Loughborough University in 2010 - where I studied Politics
   @info["ruby_track_completedness"] = "100%"
   @info["js_track_completedness"] = "100%"
 
+
   @dob = @profile["dob"].gsub!(/-/, "")
   @dob_form = Date.parse(@dob).strftime("%d/%m/%Y")
+
 
   erb :index, :layout => :main
 end

@@ -226,6 +226,10 @@ h3 {
   padding-left: 40px;
 }
 
+.min_words {
+  font-weight: normal;
+}
+
 @media only screen and (max-width: 936px) {
 
 
